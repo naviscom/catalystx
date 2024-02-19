@@ -146,6 +146,7 @@ func (server *Server) setupRouter() {
 	router.GET("/traffic", server.listTraffic)
 	router.POST("/updatetraffic", server.updateTraffic)
 	router.GET("/deletetraffic/:id", server.deleteTraffic)
+	router.POST("/updatenetworkdb", server.updatenetworkdb)
 
 	// setting the Gin router to Default() allows all origins
 	router.Use(cors.Default())
