@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+spec:
+  controller: k8s.io/ingress-nginx
+
+kind: Ingress
+metadata:
+  name: catalystx-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "api.naviscatalyst.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: catalystx-api-service
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - api.naviscatalyst.com
+    secretName: catalystx-api-cert
+

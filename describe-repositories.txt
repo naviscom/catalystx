@@ -1,0 +1,21 @@
+#### This is a system generated file. Do not Modify it's contents or delete this file ####
+
+{
+    "repositories": [
+        {
+            "repositoryArn": "arn:aws:ecr:us-west-2:618020673772:repository/catalystx",
+            "registryId": "618020673772",
+            "repositoryName": "catalystx",
+            "repositoryUri": "618020673772.dkr.ecr.us-west-2.amazonaws.com/catalystx",
+            "createdAt": "2024-02-19T22:49:42.814000+05:00",
+            "imageTagMutability": "MUTABLE",
+            "imageScanningConfiguration": {
+                "scanOnPush": false
+            },
+            "encryptionConfiguration": {
+                "encryptionType": "AES256"
+            }
+        }
+    ]
+}
+
