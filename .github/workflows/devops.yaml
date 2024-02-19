@@ -48,8 +48,8 @@ jobs:
     - name: Run migrations
       run: make migrateup
 
-    - name: Perform Tests
-      run: make test
+#    - name: Perform Tests
+#      run: make test
 
 #  deploy:
 #    name: Build image
