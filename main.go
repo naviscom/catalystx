@@ -10,6 +10,7 @@ import (
 	"github.com/naviscom/catalystx/util"
 	//_ "github.com/lib/pq"
 	"github.com/jackc/pgx/v5/pgxpool"
+	
 )
 
 func main() {

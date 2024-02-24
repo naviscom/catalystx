@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalystx-api-deployment
+  labels:
+    app: catalystx-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: catalystx-api
+  template:
+    metadata:
+      labels:
+        app: catalystx-api
+    spec:
+      containers:
+      - name: catalystx-api
+        image: catalystx:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080

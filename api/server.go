@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	db "github.com/naviscom/catalystx/db/sqlc"
 	"github.com/naviscom/catalystx/util"
+	"github.com/naviscom/catalystxext"
 )
 
 // // Server serves HTTP requests.
@@ -27,6 +28,7 @@ func NewServer(config util.Config, store *db.Store) (*Server, error) {
 }
 
 func (server *Server) setupRouter() {
+
 	router := gin.Default()
 	//router.POST("/users", server.createUser)
 	//router.POST("/users/login", server.loginUser)
@@ -146,7 +148,7 @@ func (server *Server) setupRouter() {
 	router.GET("/traffic", server.listTraffic)
 	router.POST("/updatetraffic", server.updateTraffic)
 	router.GET("/deletetraffic/:id", server.deleteTraffic)
-	router.POST("/updatenetworkdb", server.updatenetworkdb)
+	router.POST("/updatenetworkdb",  catalystxext.UpdateNetworkDB)
 
 	// setting the Gin router to Default() allows all origins
 	router.Use(cors.Default())
